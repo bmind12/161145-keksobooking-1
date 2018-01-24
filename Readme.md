@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Сергей Рябов](https://up.htmlacademy.ru/javascript/12/user/161145).
-* Наставник: `Неизвестно`.
+* Наставник: `Без наставника`.
 
 ---
 
