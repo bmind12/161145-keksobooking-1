@@ -2,6 +2,10 @@
 
 generateRandomData(8);
 
+var map = document.querySelector('.map');
+
+map.classList.remove('map--faded');
+
 function generateRandomData(num) {
   var data = [];
   var photoNumbers = [];
@@ -43,8 +47,6 @@ function generateRandomData(num) {
       types
     ));
   }
-
-  console.log(data);
 }
 
 function Ad(
