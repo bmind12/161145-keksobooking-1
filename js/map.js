@@ -1,9 +1,11 @@
 'use strict';
 
-generateRandomData(8);
-
 var map = document.querySelector('.map');
+var ads = generateRandomData(8);
+var fragment = generatePins(ads);
+var mapPins = document.querySelector('.map__pins');
 
+mapPins.appendChild(fragment);
 map.classList.remove('map--faded');
 
 function generateRandomData(num) {
@@ -47,6 +49,8 @@ function generateRandomData(num) {
       types
     ));
   }
+
+  return data;
 }
 
 function Ad(
@@ -131,4 +135,22 @@ function shuffleArray(array) {
   }
 
   return shuffledArray;
+}
+
+function generatePins(ads) {
+  var template = document.querySelector('template')
+    .content.querySelector('.map__pin');
+  var fragment = document.createDocumentFragment();
+
+  for (var i = 0; i < ads.length; i++) {
+    var pin = template.cloneNode(true);
+
+    pin.style.left = ads[i].location.x + 'px';
+    pin.style.top = ads[i].location.y + 'px';
+    pin.querySelector('img').src = ads[i].author;
+
+    fragment.appendChild(pin);
+  }
+
+  return fragment;
 }
